@@ -1,0 +1,43 @@
+{
+  "name": "asdfasfdasdf",
+  "version": "0.5.5",
+  "access": "public",
+  "module": "dist/esm/index.js",
+  "types": "dist/types.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "install-peers",
+    "prepublishOnly": "yarn build",
+    "postbuild": "dts-bundle-generator --no-check --external-types=react --external-imports=moment -o dist/types.d.ts src/index.ts",
+    "lint:types": "tsc --project tsconfig.json --noEmit",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "babel-loader": "^8.2.2",
+    "dts-bundle-generator": "^5.9.0",
+    "install-peers-cli": "^2.2.0",
+    "rollup": "^2.33.1",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-ts-paths-resolve": "^1.7.1",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "^17",
+    "react-dom": "^17"
+  },
+  "files": [
+    "dist"
+  ]
+}
