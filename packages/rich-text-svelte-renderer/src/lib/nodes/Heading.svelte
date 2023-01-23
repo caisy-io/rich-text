@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { attrsToStyle } from '$lib/transformer/attrsToStyle';
+	import { attrsToStyle } from '../transformer/attrsToStyle';
 
 	export let node: any;
 
