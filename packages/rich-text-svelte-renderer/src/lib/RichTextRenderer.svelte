@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let node: any;
-	export let overwrites: any;
+	export let overwrites: any | undefined = undefined;
 
 	import Doc from '$lib/nodes/Doc.svelte';
 	import Paragraph from '$lib/nodes/Paragraph.svelte';
@@ -19,7 +19,7 @@
 	import HardBreak from '$lib/nodes/HardBreak.svelte';
 	import CodeBlock from '$lib/nodes/CodeBlock.svelte';
 
-	export const DEFAULT_BLOCK_MAP: any = {
+	const DEFAULT_BLOCK_MAP: any = {
 		doc: Doc,
 		paragraph: Paragraph,
 		hardBreak: HardBreak,
@@ -40,9 +40,8 @@
 
 	const blockMap = {
 		...DEFAULT_BLOCK_MAP,
-		...overwrites
-	}
-
+		...(overwrites || {})
+	};
 </script>
 
 {#if node.content}

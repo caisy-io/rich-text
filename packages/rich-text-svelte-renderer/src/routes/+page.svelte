@@ -723,4 +723,4 @@
 	import RichTextRenderer from '$lib/RichTextRenderer.svelte';
 </script>
 
-<RichTextRenderer node={allInOneSampleText.json}>some childs</RichTextRenderer>
+<RichTextRenderer node={allInOneSampleText.json} >some childs</RichTextRenderer>
