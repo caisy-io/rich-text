@@ -6,7 +6,7 @@
 {#if node.marks && node.marks[0]}
 	{#if node.marks[0].type === 'bold'}
 		<strong>
-			<svelte:self node={{ ...node, marks: node.markss.slice().shift() }} />
+			<svelte:self node={{ ...node, marks: node.marks.slice().shift() }} />
 		</strong>
     {:else if node.marks[0].type === 'italic'}
 		<em>
