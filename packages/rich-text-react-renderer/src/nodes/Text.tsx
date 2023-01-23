@@ -19,11 +19,11 @@ const Mark: FC<{ mark: Marks; attrs: any }> = ({ mark, attrs, children }) => {
         </a>
       );
     default:
-      console.warn(`unknown mark type: ${mark}`)
-      if(children){
-        return <>{children}</>
-      }else {
-        return null
+      console.warn(`unknown mark type: ${mark}`);
+      if (children) {
+        return <>{children}</>;
+      } else {
+        return null;
       }
   }
 };
