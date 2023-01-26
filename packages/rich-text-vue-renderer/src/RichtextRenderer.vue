@@ -1,20 +1,20 @@
 <script setup>
 import { defineProps } from "vue";
-import DocVue from "./src/nodes/Doc.vue";
-import BlockQuoteVue from "./src/nodes/BlockQuote.vue";
-import BulletListVue from "./src/nodes/BulletList.vue";
-import CodeBlockVue from "./src/nodes/CodeBlock.vue";
-import HardBreakVue from "./src/nodes/HardBreak.vue";
-import HeadingVue from "./src/nodes/Heading.vue";
-import IFrameVue from "./src/nodes/IFrame.vue";
-import ListItemVue from "./src/nodes/ListItem.vue";
-import OrderedListVue from "./src/nodes/OrderedList.vue";
-import ParagraphVue from "./src/nodes/Paragraph.vue";
-import TableVue from "./src/nodes/Table.vue";
-import TableCellVue from "./src/nodes/TableCell.vue";
-import TableHeaderVue from "./src/nodes/TableHeader.vue";
-import TableRowVue from "./src/nodes/TableRow.vue";
-import TextVue from "./src/nodes/Text.vue";
+import BlockQuoteVue from "./nodes/BlockQuote.vue";
+import BulletListVue from "./nodes/BulletList.vue";
+import CodeBlockVue from "./nodes/CodeBlock.vue";
+import DocVue from "./nodes/Doc.vue";
+import HardBreakVue from "./nodes/HardBreak.vue";
+import HeadingVue from "./nodes/Heading.vue";
+import IFrameVue from "./nodes/IFrame.vue";
+import ListItemVue from "./nodes/ListItem.vue";
+import OrderedListVue from "./nodes/OrderedList.vue";
+import ParagraphVue from "./nodes/Paragraph.vue";
+import TableVue from "./nodes/Table.vue";
+import TableCellVue from "./nodes/TableCell.vue";
+import TableHeaderVue from "./nodes/TableHeader.vue";
+import TableRowVue from "./nodes/TableRow.vue";
+import TextVue from "./nodes/Text.vue";
 
 const props = defineProps({
   node: Object,
