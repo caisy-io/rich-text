@@ -1,6 +1,6 @@
 {
-  "name": "@caisy/rich-text-svelte-renderer",
-  "version": "0.1.0",
+  "name": "@caisy/rich-text-vue-renderer",
+  "version": "0.1.1",
   "type": "module",
   "files": [
     "dist"
