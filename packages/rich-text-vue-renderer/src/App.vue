@@ -709,7 +709,7 @@ const AllInOneSampleText = {
 };
 
 // import { AllInOneSampleText } from "../../fixtures";
-import RichtextRendererVue from "./RichtextRenderer.vue";
+import RichtextRendererVue from "../lib/RichtextRenderer.vue";
 
 export default {
   name: "App",

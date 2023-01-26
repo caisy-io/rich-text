@@ -1,10 +1,17 @@
 {
   "name": "@caisy/rich-text-vue-renderer",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "type": "module",
   "files": [
     "dist"
   ],
+  "module": "./dist/rich-text-vue-renderer.js",
+  "exports": {
+    ".": {
+      "import": "./dist/rich-text-vue-renderer.js",
+      "require": "./dist/rich-text-vue-renderer.umd.cjs"
+    }
+  },
   "private": false,
   "scripts": {
     "dev": "vite",
