@@ -7,4 +7,3 @@ export default {
 <template>
   <br />
 </template>
-
