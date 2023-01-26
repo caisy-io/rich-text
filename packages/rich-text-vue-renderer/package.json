@@ -1,6 +1,10 @@
 {
   "name": "@caisy/rich-text-svelte-renderer",
   "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "private": false,
   "scripts": {
     "dev": "vite",
