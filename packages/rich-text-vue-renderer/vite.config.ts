@@ -11,7 +11,7 @@ export default defineConfig({
     lib: {
       name: "@caisy/rich-text-vue-renderer",
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "lib/main.js"),
+      entry: resolve(__dirname, "src/lib/main.js"),
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
