@@ -55,7 +55,7 @@ const getComponent = (type) => {
       :is="getComponent(child.type)"
       :node="child"
     >
-      <RichtextRenderer v-if="child.content" :node="child" />
+      <RichTextRenderer v-if="child.content" :node="child" />
     </component>
   </template>
   <slot />
