@@ -1,0 +1,9 @@
+---
+import { attrsToStyle } from "../transformer/attrsToStyle";
+
+const {node} = Astro.props;
+---
+
+<blockquote style={attrsToStyle(node.attrs)}>
+    <slot></slot>
+</blockquote>

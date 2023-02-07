@@ -1,0 +1,8 @@
+---
+import { attrsToStyle } from "../transformer/attrsToStyle";
+
+const {node} = Astro.props;
+---
+  <table>
+  <tbody style={(node?.attrs ? attrsToStyle(node.attrs) : undefined) }><slot></slot></tbody>
+</table>

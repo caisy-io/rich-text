@@ -1,0 +1,62 @@
+---
+import Doc from "./nodes/Doc.astro";
+import Paragraph from "./nodes/Paragraph.astro";
+import Text from "./nodes/Text.astro";
+import BlockQuote from "./nodes/BlockQuote.astro";
+import BulletList from "./nodes/BulletList.astro";
+import OrderedList from "./nodes/OrderedList.astro";
+import ListItem from "./nodes/ListItem.astro";
+import Heading from "./nodes/Heading.astro";
+import DocumentLink from "./nodes/DocumentLink.astro";
+import IFrame from "./nodes/IFrame.astro";
+import Table from "./nodes/Table.astro";
+import TableRow from "./nodes/TableRow.astro";
+import TableCell from "./nodes/TableCell.astro";
+import TableHeader from "./nodes/TableHeader.astro";
+import HardBreak from "./nodes/HardBreak.astro";
+import CodeBlock from "./nodes/CodeBlock.astro";
+import RichTextRenderer from "./RichTextRenderer.astro";
+
+export interface Props {
+  node?: string;
+  overwrites?: any;
+}
+const { node, overwrites } = Astro.props;
+
+const DEFAULT_BLOCK_MAP: any = {
+  doc: Doc,
+  paragraph: Paragraph,
+  hardBreak: HardBreak,
+  codeBlock: CodeBlock,
+  text: Text,
+  blockquote: BlockQuote,
+  listItem: ListItem,
+  bulletList: BulletList,
+  orderedList: OrderedList,
+  heading: Heading,
+  iframe: IFrame,
+  table: Table,
+  tableHeader: TableHeader,
+  tableRow: TableRow,
+  tableCell: TableCell,
+  documentLink: DocumentLink,
+};
+
+const blockMap = {
+  ...DEFAULT_BLOCK_MAP,
+  ...(overwrites || {}),
+};
+---
+{
+  node &&
+    node.content &&
+    node.content.map((childNode) => {
+      const Comp = blockMap[childNode.type];
+      return (
+        <Comp node={childNode}>
+          {childNode.content ? <RichTextRenderer node={childNode} /> : null}
+        </Comp>
+      );
+    })
+}
+<slot />

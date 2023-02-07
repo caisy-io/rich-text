@@ -1,0 +1,7 @@
+---
+console.warn("documentLink should be implemented with an overwrite in the richtext");
+
+const {node} = Astro.props;
+---
+{node?.attrs?.documentId ?? ""}
+<slot></slot>

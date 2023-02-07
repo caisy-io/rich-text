@@ -1,0 +1,48 @@
+---
+type Marks = "bold" | "italic" | "strike" | "link" | "code";
+interface Props {
+  mark?: Marks;
+  attrs?: any;
+}
+const { mark, attrs } = Astro.props;
+---
+
+{
+  () => {
+    switch (mark) {
+      case "bold":
+        return (
+          <strong>
+            <slot />
+          </strong>
+        );
+      case "code":
+        return (
+          <code>
+            <slot />
+          </code>
+        );
+      case "italic":
+        return (
+          <em>
+            <slot />
+          </em>
+        );
+      case "strike":
+        return (
+          <s>
+            <slot />
+          </s>
+        );
+      case "link":
+        return (
+          <a href={attrs.href} target={attrs.target}>
+            <slot />
+          </a>
+        );
+      default:
+        console.warn(`unknown mark type: ${mark}`);
+        return <slot />;
+    }
+  }
+}

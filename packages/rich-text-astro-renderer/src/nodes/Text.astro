@@ -1,0 +1,21 @@
+---
+import Mark from './Mark.astro'
+const { node } = Astro.props;
+---
+
+{
+  node.marks ? (
+    node.marks.reduce(
+      (memo: JSX.Element, mark: { type: Marks; attrs: any }) => {
+        return (
+          <Mark mark={mark.type} attrs={mark.attrs}>
+            {memo}
+          </Mark>
+        );
+      },
+      <>{node.text}</>
+    )
+  ) : (
+    <>{node.text}</>
+  )
+}

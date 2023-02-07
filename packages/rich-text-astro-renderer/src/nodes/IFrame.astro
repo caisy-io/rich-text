@@ -1,0 +1,16 @@
+---
+import { attrsToStyle } from "../transformer/attrsToStyle";
+
+const {node} = Astro.props;
+const attrs = node.attrs;
+---
+<iframe
+	style={node?.attrs ? attrsToStyle(node.attrs) : undefined}
+	src={attrs.src}
+	allow={attrs.allow}
+	title={attrs.title}
+	frameborder={attrs.frameborder}
+	height={attrs.height}
+	width={attrs.width}
+	allowfullscreen={attrs.allowfullscreen}><slot /></iframe
+>

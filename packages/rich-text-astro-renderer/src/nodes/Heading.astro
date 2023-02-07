@@ -1,0 +1,25 @@
+---
+import { attrsToStyle } from "../transformer/attrsToStyle";
+
+const {node} = Astro.props;
+const attrs = node.attrs;
+const level = node.attrs?.level;
+---
+{() => {
+  switch (level) {
+    case 1:
+      return <h1 style={attrsToStyle(attrs)}><slot></slot></h1>
+    case 2:
+      return <h2 style={attrsToStyle(attrs)}><slot></slot></h2>
+    case 3:
+      return <h3 style={attrsToStyle(attrs)}><slot></slot></h3>
+    case 4:
+      return <h4 style={attrsToStyle(attrs)}><slot></slot></h4>
+    case 5:
+      return <h5 style={attrsToStyle(attrs)}><slot></slot></h5>
+    case 6:
+      return <h6 style={attrsToStyle(attrs)}><slot></slot></h6>
+  }
+  return <></>
+  }
+}

@@ -1,0 +1,7 @@
+---
+import { attrsToStyle } from "../transformer/attrsToStyle";
+
+const {node} = Astro.props;
+---
+
+<pre style={attrsToStyle(node.attrs)}><slot></slot></pre>
