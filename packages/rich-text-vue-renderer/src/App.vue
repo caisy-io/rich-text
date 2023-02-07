@@ -1,5 +1,5 @@
 <template>
-  <RichtextRenderer :node="node.json">some childs</RichtextRenderer>
+  <RichTextRenderer :node="node.json">some childs</RichTextRenderer>
 </template>
 
 <script>
@@ -709,12 +709,12 @@ const AllInOneSampleText = {
 };
 
 // import { AllInOneSampleText } from "../../fixtures";
-import RichtextRendererVue from "../lib/RichtextRenderer.vue";
+import RichTextRendererVue from "../lib/RichTextRenderer.vue";
 
 export default {
   name: "App",
   components: {
-    RichtextRenderer: RichtextRendererVue,
+    RichTextRenderer: RichTextRendererVue,
   },
   data: () => ({
     node: AllInOneSampleText,
