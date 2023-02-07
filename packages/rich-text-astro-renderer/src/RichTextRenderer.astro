@@ -18,7 +18,7 @@ import CodeBlock from "./nodes/CodeBlock.astro";
 import RichTextRenderer from "./RichTextRenderer.astro";
 
 export interface Props {
-  node?: string;
+  node?: any;
   overwrites?: any;
 }
 const { node, overwrites } = Astro.props;
@@ -50,7 +50,7 @@ const blockMap = {
 {
   node &&
     node.content &&
-    node.content.map((childNode) => {
+    node.content.map((childNode: any) => {
       const Comp = blockMap[childNode.type];
       return (
         <Comp node={childNode}>
