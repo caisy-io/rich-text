@@ -1,6 +1,6 @@
 {
 	"name": "@caisy/rich-text-svelte-renderer",
-	"version": "0.1.18",
+	"version": "0.1.19",
 	"scripts": {
 		"dev": "vite dev",
 		"rbuild": "npm version patch && svelte-kit sync && svelte-package",

@@ -28,6 +28,336 @@
 		json: {
 			content: [
 				{
+					type: 'paragraph',
+					attrs: {
+						textAlign: 'left'
+					},
+					content: [
+						{
+							type: 'text',
+							text: 'test-article'
+						}
+					]
+				},
+				{
+					type: 'paragraph',
+					attrs: {
+						textAlign: 'left'
+					}
+				},
+				{
+					type: 'table',
+					content: [
+						{
+							type: 'tableRow',
+							content: [
+								{
+									type: 'tableHeader',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: '1'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableHeader',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: '2'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableHeader',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: '3'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableHeader',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: '4'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableHeader',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: '5'
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							type: 'tableRow',
+							content: [
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							type: 'tableRow',
+							content: [
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 1,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.'
+												}
+											]
+										}
+									]
+								},
+								{
+									type: 'tableCell',
+									attrs: {
+										colspan: 3,
+										rowspan: 1,
+										colwidth: null
+									},
+									content: [
+										{
+											type: 'paragraph',
+											attrs: {
+												textAlign: 'left'
+											},
+											content: [
+												{
+													type: 'text',
+													text: 'Verknüpfte Dokumente werden hier angezeigt.Verknüpfte Dokumente werden hier angezeigt.Verknüpfte Dokumente werden hier angezeigt.Verknüpfte Dokumente werden hier angezeigt. '
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					type: 'paragraph',
+					attrs: {
+						textAlign: 'left'
+					}
+				},
+				{
 					attrs: {
 						level: 1,
 						textAlign: 'left'
@@ -723,4 +1053,4 @@
 	import RichTextRenderer from '$lib/RichTextRenderer.svelte';
 </script>
 
-<RichTextRenderer node={allInOneSampleText.json} >some childs</RichTextRenderer>
+<RichTextRenderer node={allInOneSampleText.json}>some childs</RichTextRenderer>
