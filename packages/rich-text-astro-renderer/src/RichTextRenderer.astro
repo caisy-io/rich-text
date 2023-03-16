@@ -20,8 +20,9 @@ import RichTextRenderer from "./RichTextRenderer.astro";
 export interface Props {
   node?: any;
   overwrites?: any;
+  connections?: any;
 }
-const { node, overwrites } = Astro.props;
+const { node, overwrites, connections } = Astro.props;
 
 const DEFAULT_BLOCK_MAP: any = {
   doc: Doc,
@@ -53,7 +54,7 @@ const blockMap = {
     node.content.map((childNode: any) => {
       const Comp = blockMap[childNode.type];
       return (
-        <Comp node={childNode}>
+        <Comp node={childNode} connections={connections} >
           {childNode.content ? <RichTextRenderer node={childNode} /> : null}
         </Comp>
       );

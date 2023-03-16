@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let node: any;
 	export let overwrites: any | undefined = undefined;
+	export let connections: any | undefined = undefined;
 
 	import Doc from '$lib/nodes/Doc.svelte';
 	import Paragraph from '$lib/nodes/Paragraph.svelte';
@@ -46,7 +47,7 @@
 
 {#if node.content}
 	{#each node.content as child}
-		<svelte:component this={blockMap[child.type]} node={child}>
+		<svelte:component this={blockMap[child.type]} connections={connections} node={child}>
 			{#if child.content}
 				<svelte:self node={child} />
 			{/if}
