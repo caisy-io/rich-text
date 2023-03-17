@@ -18,7 +18,8 @@ import TextVue from "./nodes/Text.vue";
 
 const props = defineProps({
   node: Object,
-  blockMap: Map,
+  connections: Array,
+  blockMap: [Map , Object],
 });
 
 const DEFAULT_BLOCK_MAP = {
@@ -37,7 +38,6 @@ const DEFAULT_BLOCK_MAP = {
   tableHeader: TableHeaderVue,
   tableCell: TableCellVue,
   text: TextVue,
-  // documentLink: DocumentLink,
 };
 
 const BLOCKS = { ...DEFAULT_BLOCK_MAP, ...props?.blockMap };
@@ -54,8 +54,9 @@ const getComponent = (type) => {
       :key="`node-${child.type}-${index}`"
       :is="getComponent(child.type)"
       :node="child"
+      :connections="connections"
     >
-      <RichTextRenderer v-if="child.content" :node="child" />
+      <RichTextRenderer v-if="child.content" :node="child" :connections="connections" />
     </component>
   </template>
   <slot />
