@@ -54,7 +54,7 @@ const getComponent = (type) => {
       :key="`node-${child.type}-${index}`"
       :is="getComponent(child.type)"
       :node="child"
-      :connections="connections"
+      v-bind="{ connections: connections }"
     >
       <RichTextRenderer v-if="child.content" :node="child" :connections="connections" />
     </component>
