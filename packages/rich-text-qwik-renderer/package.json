@@ -1,6 +1,6 @@
 {
-  "name": "rich-text-qwik-renderer",
-  "version": "0.0.2",
+  "name": "@caisy/rich-text-qwik-renderer",
+  "version": "0.0.3",
   "description": "reusable Qwik component library renders Caisy.io rich text response",
   "main": "./lib/index.qwik.mjs",
   "author": "Hassan Mostafa",
