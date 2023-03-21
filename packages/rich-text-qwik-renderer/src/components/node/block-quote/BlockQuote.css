@@ -1,0 +1,6 @@
+blockquote {
+  padding: 8px 8px 8px 10px;
+  border-left: 2px solid black;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.03);
+}
