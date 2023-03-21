@@ -19,12 +19,8 @@ export const headingCreator = ({
   const CustomTag = `h${level}` as any;
 
   return (
-    <CustomTag>
-      {nodesArr ? (
-        <Text nodesArr={nodesArr} />
-      ) : (
-        <span style={attrsToStyle(attrs)}>{text}</span>
-      )}
+    <CustomTag style={attrsToStyle(attrs)}>
+      {nodesArr ? <Text nodesArr={nodesArr} /> : text}
     </CustomTag>
   );
 };

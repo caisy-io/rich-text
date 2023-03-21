@@ -13,39 +13,8 @@ interface IRenderer {
   json?: any;
 }
 
-export type ElementType =
-  | "doc"
-  | "hardBreak"
-  | "paragraph"
-  | "codeBlock"
-  | "blockquote"
-  | "bulletList"
-  | "orderedList"
-  | "listItem"
-  | "heading"
-  | "iframe"
-  | "table"
-  | "tableHeader"
-  | "tableRow"
-  | "tableCell"
-  | "documentLink"
-  | "text";
-
-// export const DEFAULT_BLOCK_MAP = {
-//   paragraph: Paragraph,
-//   heading: Heading,
-//   text: Text,
-// };
-
 export const RichTextRenderer = component$<IRenderer>(({ json }) => {
   if (json?.type !== "doc") return <>json object must be of type:"doc"</>;
-
-  // react renderer logic
-  // for (const node of json.content) {
-  //   console.log("elem", {
-  //     elem: DEFAULT_BLOCK_MAP[node.type as keyof typeof DEFAULT_BLOCK_MAP],
-  //   });
-  // }
 
   return (
     <>
