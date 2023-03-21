@@ -14,47 +14,42 @@ interface IRenderer {
 }
 
 export const RichTextRenderer = component$<IRenderer>(({ json }) => {
-  if (json?.type !== "doc") return <>json object must be of type:"doc"</>;
+  if (json?.type !== "doc") {
+    /* eslint-disable no-console */
+    console.error("rich text json object must contain type:'doc'");
+    return <></>;
+  }
 
-  return (
-    <>
-      {json?.content?.map((element: any, elementIndex: number) => {
-        switch (element.type) {
-          case "paragraph":
-            return (
-              <Paragraph key={`pc-${elementIndex}`} attrs={element?.attrs}>
-                <Text nodesArr={element?.content} />
-              </Paragraph>
-            );
-          case "heading":
-            return (
-              <Heading
-                key={`pc-${elementIndex}`}
-                level={element.attrs.level}
-                nodesArr={element.content}
-                attrs={element.attrs}
-              />
-            );
-          case "orderedList":
-            return <OrderedList node={element} key={`pc-${elementIndex}`} />;
-          case "bulletList":
-            return <BulletList node={element} key={`pc-${elementIndex}`} />;
-          case "blockquote":
-            return <BlockQuote node={element} />;
-          case "codeBlock":
-            return (
-              <CodeBlock node={element}>
-                <Text nodesArr={element.content} />
-              </CodeBlock>
-            );
-          case "table":
-            return <Table node={element} />;
-          case "iframe":
-            return <Iframe node={element} />;
-          default:
-            return <>Unknown TYPE</>;
-        }
-      })}
-    </>
-  );
+  return json?.content?.map((element: any) => {
+    switch (element.type) {
+      case "paragraph":
+        return (
+          <Paragraph attrs={element?.attrs}>
+            <Text nodesArr={element?.content} />
+          </Paragraph>
+        );
+      case "heading":
+        return <Heading nodesArr={element.content} attrs={element.attrs} />;
+      case "orderedList":
+        return <OrderedList node={element} />;
+      case "bulletList":
+        return <BulletList node={element} />;
+      case "blockquote":
+        return <BlockQuote node={element} />;
+      case "codeBlock":
+        return (
+          <CodeBlock node={element}>
+            <Text nodesArr={element.content} />
+          </CodeBlock>
+        );
+      case "table":
+        return <Table node={element} />;
+      case "iframe":
+        return <Iframe node={element} />;
+      default:
+        /* eslint-disable no-console */
+        console.error(`Unknown Type: ${element.type}`);
+        return <></>;
+    }
+  });
 });

@@ -4,7 +4,6 @@ import type { FunctionComponent, JSXNode } from "@builder.io/qwik";
 import { attrsToStyle } from "../../transformer/attrsToStyle";
 import Text from "../text/Text";
 interface IHeader {
-  level?: number;
   attrs?: any;
   text?: any;
   nodesArr?: any;
@@ -12,11 +11,10 @@ interface IHeader {
 
 export const headingCreator = ({
   text,
-  level,
   attrs,
   nodesArr,
 }: IHeader): JSXNode<string | FunctionComponent<Record<string, any>>> => {
-  const CustomTag = `h${level}` as any;
+  const CustomTag = `h${attrs.level}` as any;
 
   return (
     <CustomTag style={attrsToStyle(attrs)}>
@@ -25,6 +23,6 @@ export const headingCreator = ({
   );
 };
 
-export default component$<IHeader>(({ text, level, attrs, nodesArr }) => {
-  return headingCreator({ text, level, attrs, nodesArr });
+export default component$<IHeader>(({ text, attrs, nodesArr }) => {
+  return headingCreator({ text, attrs, nodesArr });
 });
