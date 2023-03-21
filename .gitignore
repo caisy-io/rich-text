@@ -54,3 +54,26 @@ yarn-error.log*
 # turbo
 .turbo
 .npmrc
+
+# Qwik Build
+**/lib
+**/lib-types
+**/server
+
+# Cache
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+lerna-debug.log*
+
+# Editor
+!.vscode/extensions.json
+
+# Yarn
+.yarn/*
+!.yarn/releases
