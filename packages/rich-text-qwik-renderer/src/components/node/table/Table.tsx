@@ -6,7 +6,7 @@ interface ITable {
 }
 
 export default component$<ITable>(({ node }) => (
-  <table style={{ borderCollapse: "collapse" }}>
+  <table>
     <tbody>
       {node.content.map((row: any, rowIndex: number) => (
         <tr key={rowIndex}>
