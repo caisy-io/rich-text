@@ -1,2 +1,2 @@
-import { RichTextRenderer } from "./components/renderer/RichTextRenderer";
+import { RichTextRenderer } from "./RichTextRenderer";
 export default RichTextRenderer;

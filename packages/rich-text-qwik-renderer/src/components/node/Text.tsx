@@ -39,23 +39,19 @@ const Mark = component$<{ mark: Marks; attrs: any }>(({ mark, attrs }) => {
   }
 });
 
-const Text = component$<{ nodesArr: any }>(({ nodesArr }) =>
-  nodesArr?.map((elementContent: any) =>
-    elementContent?.marks ? (
-      elementContent.marks.reduce(
-        (memo: JSX.Element, mark: { type: Marks; attrs: any }) => {
-          return (
-            <Mark mark={mark.type} attrs={mark.attrs}>
-              {memo}
-            </Mark>
-          );
-        },
-        <>{elementContent.text}</>
-      )
-    ) : (
-      <>{elementContent?.text}</>
+export default component$<{ node: any }>(({ node }) =>
+  node.marks ? (
+    node.marks.reduce(
+      (memo: JSX.Element, mark: { type: Marks; attrs: any }) => {
+        return (
+          <Mark mark={mark.type} attrs={mark.attrs}>
+            {memo}
+          </Mark>
+        );
+      },
+      <>{node.text}</>
     )
+  ) : (
+    <>{node.text}</>
   )
 );
-
-export default Text;
