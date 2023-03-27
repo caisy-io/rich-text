@@ -5,6 +5,7 @@ export default {
   name: "BlockQuote",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

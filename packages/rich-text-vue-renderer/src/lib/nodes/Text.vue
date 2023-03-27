@@ -5,6 +5,7 @@ export default {
   name: "Text",
   props: {
     node: Object,
+    connections: Array,
   },
   methods: {
     attrsToStyle,

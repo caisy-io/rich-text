@@ -19,7 +19,7 @@ import TextVue from "./nodes/Text.vue";
 const props = defineProps({
   node: Object,
   connections: Array,
-  blockMap: [Map , Object],
+  blockMap: [Map, Object],
 });
 
 const DEFAULT_BLOCK_MAP = {
@@ -48,16 +48,13 @@ const getComponent = (type) => {
 </script>
 
 <template>
-  <template v-if="node.content">
-    <component
-      v-for="(child, index) in node.content"
-      :key="`node-${child.type}-${index}`"
-      :is="getComponent(child.type)"
-      :node="child"
-      v-bind="{ connections: connections }"
-    >
-      <RichTextRenderer v-if="child.content" :node="child" :connections="connections" />
-    </component>
-  </template>
+  <div>
+    <template v-if="node.content">
+      <component v-for="(child, index) in node.content" :key="`node-${child.type}-${index}`"
+        :is="getComponent(child.type)" :node="child" v-bind="{ connections: connections }">
+        <RichTextRenderer v-if="child.content" :node="child" :connections="connections" />
+      </component>
+    </template>
+  </div>
   <slot />
 </template>

@@ -5,6 +5,7 @@ export default {
   name: "ListItem",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

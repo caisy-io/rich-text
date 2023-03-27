@@ -5,6 +5,7 @@ export default {
   name: "TableCell",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

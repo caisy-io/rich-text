@@ -5,6 +5,7 @@ export default {
   name: "BulletList",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

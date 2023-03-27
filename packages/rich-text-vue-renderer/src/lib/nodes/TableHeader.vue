@@ -5,6 +5,7 @@ export default {
   name: "TableHeader",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

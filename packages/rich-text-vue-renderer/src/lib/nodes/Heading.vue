@@ -18,6 +18,7 @@ export default {
   name: "Heading",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,

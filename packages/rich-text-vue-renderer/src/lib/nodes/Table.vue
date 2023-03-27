@@ -5,6 +5,7 @@ export default {
   name: "Table",
   props: {
     node: { attrs: Object },
+    connections: Array,
   },
   methods: {
     attrsToStyle,
