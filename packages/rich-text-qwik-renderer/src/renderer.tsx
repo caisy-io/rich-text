@@ -63,7 +63,7 @@ export const documentRenderer = (blockMap: any) => {
     const Element = BLOCKS[currNode.type];
 
     if (!Element) {
-      console.log("renderNode -> missing node type:", currNode.type);
+      console.warn("renderNode -> missing node type:", currNode.type);
       return null;
     }
 
