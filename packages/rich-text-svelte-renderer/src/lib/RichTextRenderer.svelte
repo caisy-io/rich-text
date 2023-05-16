@@ -47,7 +47,7 @@
 
 {#if node.content}
 	{#each node.content as child}
-		<svelte:component this={blockMap[child.type]} connections={connections} node={child}>
+		<svelte:component this={blockMap[child.type]} connections={child.type == "documentLink" ? connections : undefined} node={child}>
 			{#if child.content}
 				<svelte:self node={child} />
 			{/if}
