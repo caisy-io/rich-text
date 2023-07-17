@@ -1,4 +1,53 @@
 {
-  "name": "@caisy/rich-text-solid-renderer",
-  "version": "0.0.0"
+	"name": "@caisy/rich-text-solid-renderer",
+	"version": "0.2.1",
+	"license": "MIT",
+	"description": "Library to render the caisy richtext with Solid JS",
+	"info": "Library to render the caisy richtext with Solid JS",
+	"author": "caisy.io",
+	"sideEffects": false,
+	"type": "module",
+	"main": "dist/browser/index.module.js",
+	"module": "dist/browser/index.module.js",
+	"types": "dist/browser/lib.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/browser/lib.d.ts",
+			"solid": "./dist/browser/lib.jsx",
+			"node": "./dist/server/index.module.js",
+			"default": "./dist/browser/index.module.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"bump": "npm version patch && yarn build && npm publish ./dist",
+		"prepare": "install-peers",
+		"lint:types": "tsc --project tsconfig.json --noEmit",
+		"build": "rollup -c"
+	},
+	"peerDependencies": {
+		"solid-js": ">=1.4.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/caisy-io/rich-text.git"
+	},
+	"homepage": "https://caisy.io",
+	"keywords": [
+		"solid",
+		"richtext",
+		"rich-text",
+		"caisy"
+	],
+	"devDependencies": {
+		"babel-preset-solid": "^1.7.7",
+		"install-peers-cli": "^2.2.0",
+		"rollup": "^3.26.3",
+		"rollup-preset-solid": "^2.0.1"
+	}
 }

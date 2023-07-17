@@ -1,5 +1,4 @@
-import { Node } from "@tiptap/core";
-import { mergeAttributes,  } from "@tiptap/react";
+import { Node, mergeAttributes } from "@tiptap/core";
 
 declare module "@tiptap/core" {
   interface Commands<ReturnType> {
