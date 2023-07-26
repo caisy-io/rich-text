@@ -10,4 +10,4 @@ export const RichTextRenderer: React.FC<{
   }
   const renderer = documentRenderer((overwrites as any) || {});
   return <>{renderer(node)}</>;
-};
+}
