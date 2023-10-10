@@ -1,7 +1,7 @@
 {
   "name": "@caisy/rich-text-astro-renderer",
   "private": false,
-  "version": "0.1.7",
+  "version": "3.2.0",
   "type": "module",
   "exports": {
     ".": "./index.ts"
@@ -18,9 +18,9 @@
   ],
   "scripts": {},
   "devDependencies": {
-    "astro": "^2.0.6"
+    "astro": "^3.2.3"
   },
   "peerDependencies": {
-    "astro": "^2"
+    "astro": "^3"
   }
 }

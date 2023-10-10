@@ -15,7 +15,7 @@ import TableCell from "./nodes/TableCell.astro";
 import TableHeader from "./nodes/TableHeader.astro";
 import HardBreak from "./nodes/HardBreak.astro";
 import CodeBlock from "./nodes/CodeBlock.astro";
-import RichTextRenderer from "./RichTextRenderer.astro";
+import RecursiveRichTextRenderer from "./RichTextRenderer.astro";
 
 export interface Props {
   node?: any;
@@ -55,7 +55,7 @@ const blockMap = {
       const Comp = blockMap[childNode.type];
       return (
         <Comp node={childNode} connections={connections} >
-          {childNode.content ? <RichTextRenderer node={childNode} /> : null}
+          {childNode.content ? <RecursiveRichTextRenderer node={childNode} /> : null}
         </Comp>
       );
     })
