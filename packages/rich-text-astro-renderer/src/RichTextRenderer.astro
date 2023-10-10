@@ -55,7 +55,7 @@ const blockMap = {
       const Comp = blockMap[childNode.type];
       return (
         <Comp node={childNode} connections={connections} >
-          {childNode.content ? <RecursiveRichTextRenderer node={childNode} /> : null}
+          {childNode.content ? <RecursiveRichTextRenderer node={childNode} connections={connections} /> : null}
         </Comp>
       );
     })
