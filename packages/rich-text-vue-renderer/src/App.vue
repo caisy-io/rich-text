@@ -1,11 +1,14 @@
 <template>
-  <RichTextRenderer :node="node.json">some childs</RichTextRenderer>
+  <RichTextRenderer :node="node.json" :connections="node.connections"
+    >some childs</RichTextRenderer
+  >
 </template>
 
 <script>
 const AllInOneSampleText = {
   connections: [
     {
+      __typename: "Asset",
       description: "",
       id: "feabd8a0-0021-488c-bedc-3df6621da552",
       keywords: "",
@@ -709,7 +712,7 @@ const AllInOneSampleText = {
 };
 
 // import { AllInOneSampleText } from "../../fixtures";
-import RichTextRendererVue from "./lib/RichtextRenderer.vue"
+import RichTextRendererVue from "./lib/RichtextRenderer.vue";
 
 export default {
   name: "App",

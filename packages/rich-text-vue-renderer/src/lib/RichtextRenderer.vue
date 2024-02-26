@@ -1,4 +1,5 @@
 <script>
+import { defineComponent } from "vue";
 import BlockQuoteVue from "./nodes/BlockQuote.vue";
 import BulletListVue from "./nodes/BulletList.vue";
 import CodeBlockVue from "./nodes/CodeBlock.vue";
@@ -14,12 +15,6 @@ import TableCellVue from "./nodes/TableCell.vue";
 import TableHeaderVue from "./nodes/TableHeader.vue";
 import TableRowVue from "./nodes/TableRow.vue";
 import TextVue from "./nodes/Text.vue";
-
-const props = {
-  node: Object,
-  connections: Array,
-  blockMap: [Map, Object],
-};
 
 const DEFAULT_BLOCK_MAP = {
   doc: DocVue,
@@ -39,17 +34,26 @@ const DEFAULT_BLOCK_MAP = {
   text: TextVue,
 };
 
-const BLOCKS = { ...DEFAULT_BLOCK_MAP, ...props?.blockMap };
-
-const getComponent = (type) => {
-  return BLOCKS[type];
-};
-
-export default {
+export default defineComponent({
   name: "RichTextRenderer",
-  props,
-  methods: { getComponent },
-};
+  props: {
+    node: Object,
+    connections: Array,
+    blockMap: {
+      type: [Map, Object],
+    },
+  },
+  computed: {
+    BLOCKS() {
+      return { ...DEFAULT_BLOCK_MAP, ...this.blockMap };
+    },
+  },
+  methods: {
+    getComponent(type) {
+      return this.BLOCKS[type];
+    },
+  },
+});
 </script>
 
 <template>
