@@ -11,7 +11,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "outDir": "./dist",
+    "verbatimModuleSyntax": true,
   },
 
   "references": [

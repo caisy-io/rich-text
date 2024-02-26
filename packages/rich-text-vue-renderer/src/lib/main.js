@@ -1,3 +1,3 @@
-import RichTextRenderer from "./RichTextRenderer.vue";
+import RichTextRenderer from "./RichtextRenderer.vue";
 
 export { RichTextRenderer };
