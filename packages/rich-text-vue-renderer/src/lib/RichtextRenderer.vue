@@ -1,5 +1,4 @@
-<script setup>
-import { defineProps } from "vue";
+<script>
 import BlockQuoteVue from "./nodes/BlockQuote.vue";
 import BulletListVue from "./nodes/BulletList.vue";
 import CodeBlockVue from "./nodes/CodeBlock.vue";
@@ -16,11 +15,11 @@ import TableHeaderVue from "./nodes/TableHeader.vue";
 import TableRowVue from "./nodes/TableRow.vue";
 import TextVue from "./nodes/Text.vue";
 
-const props = defineProps({
+const props = {
   node: Object,
   connections: Array,
   blockMap: [Map, Object],
-});
+};
 
 const DEFAULT_BLOCK_MAP = {
   doc: DocVue,
@@ -45,16 +44,29 @@ const BLOCKS = { ...DEFAULT_BLOCK_MAP, ...props?.blockMap };
 const getComponent = (type) => {
   return BLOCKS[type];
 };
+
+export default {
+  name: "RichTextRenderer",
+  props,
+  methods: { getComponent },
+};
 </script>
 
 <template>
-  <div>
-    <template v-if="node.content">
-      <component v-for="(child, index) in node.content" :key="`node-${child.type}-${index}`"
-        :is="getComponent(child.type)" :node="child" v-bind="{ connections: connections }">
-        <RichTextRenderer v-if="child.content" :node="child" :connections="connections" />
-      </component>
-    </template>
-  </div>
+  <template v-if="node.content">
+    <component
+      v-for="(child, index) in node.content"
+      :key="`node-${child.type}-${index}`"
+      :node="child"
+      v-bind="{ connections: connections }"
+      :is="getComponent(child.type)"
+    >
+      <RichTextRenderer
+        v-if="child.content"
+        :node="child"
+        :connections="connections"
+      />
+    </component>
+  </template>
   <slot />
 </template>
