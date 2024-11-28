@@ -5,6 +5,7 @@ import Doc from "./components/node/Doc";
 import DocumentLink from "./components/node/DocumentLink";
 import HardBreak from "./components/node/HardBreak";
 import Heading from "./components/node/Heading";
+import HorizontalRule from "./components/node/HorizontalRule";
 import IFrame from "./components/node/IFrame";
 import ListItem from "./components/node/ListItem";
 import OrderedList from "./components/node/OrderedList";
@@ -20,6 +21,7 @@ export type ElementType =
   | "hardBreak"
   | "paragraph"
   | "codeBlock"
+  | "horizontalRule"
   | "blockquote"
   | "bulletList"
   | "orderedList"
@@ -36,6 +38,7 @@ export type ElementType =
 export const DEFAULT_BLOCK_MAP: any = {
   doc: Doc,
   hardBreak: HardBreak,
+  horizontalRule: HorizontalRule,
   paragraph: Paragraph,
   codeBlock: CodeBlock,
   blockquote: BlockQuote,

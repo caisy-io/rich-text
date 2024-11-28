@@ -15,10 +15,12 @@ import TableCel from "./nodes/TableCell";
 import TableHeader from "./nodes/TableHeader";
 import TableRow from "./nodes/TableRow";
 import Text from "./nodes/Text";
+import HorizontalRule from "./nodes/HorizontalRule";
 
 export type ElementType =
   | "doc"
   | "hardBreak"
+  | "horizontalRule"
   | "paragraph"
   | "codeBlock"
   | "blockquote"
@@ -37,6 +39,7 @@ export type ElementType =
 export const DEFAULT_BLOCK_MAP: Record<ElementType, FC<{ node: any }>> = {
   doc: Doc,
   hardBreak: HardBreak,
+  horizontalRule: HorizontalRule,
   paragraph: Paragraph,
   codeBlock: CodeBlock,
   blockquote: BlockQuote,

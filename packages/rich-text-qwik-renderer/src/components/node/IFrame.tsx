@@ -10,6 +10,6 @@ export default component$<{ node: any }>(({ node: { attrs } }) => (
     frameBorder={attrs.frameborder}
     height={attrs.height}
     width={attrs.width}
-    allowFullScreen={attrs.allowfullscreen}
+    allowFullscreen={attrs.allowfullscreen}
   />
 ));
